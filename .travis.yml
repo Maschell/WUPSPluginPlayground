@@ -2,6 +2,9 @@ language: cpp
 os: linux
 sudo: false
 dist: trusty
+branches:
+  only:
+    - master    
 env:
   global:
   - DEVKITPRO=/opt/devkitpro
@@ -48,11 +51,11 @@ before_deploy:
 - cd $TRAVIS_BUILD_DIR/
 - mkdir -p "wiiu/plugins"
 - commit="$(git rev-parse --short=7 HEAD)"
-- find plugins -type f -name "*.mod" | xargs -i cp {} wiiu/plugins
+- find -type f -name "*.mod" | xargs -i cp {} wiiu/plugins
 - zip -r wups_playground_plugins_$commit.zip wiiu
 - git config --local user.name "Maschell"
 - git config --local user.email "Maschell@gmx.de"
-- git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+- git tag "WUPSPluginPlayground-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   skip_cleanup: true
