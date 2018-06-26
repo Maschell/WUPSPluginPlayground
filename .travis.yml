@@ -55,6 +55,7 @@ before_deploy:
 - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: c1OMwjNnnbAGInzcfAGFVaBU7HfK4MFvEj6zsihCYBP26a+1+yg5+mBrgI9U5bJvydfPUd2PW5fjwpQM26o3MKWdr8UKjx8/175khug5d94O8IgT8C2LgabImXPMI9FbP5Qgmm2M/LS9XnH2+lj7PdR0O5tEkmj2Xn7beotWD8uyVqconfEMvXhpOrqCW3rd9hPnomJ2HWMhvO/+41OlF+fCnxfXH8xfB9HYyQ63eQb0el1yUFupsdj0IzAqtse4zkPSsLgTnJ2TGhdynXoOU2hmRYigDVrOy5kD8Dl+tnPpUnvkNGRKXwo/q2KR3vev5Yp2EbldDLWCR/IScWitPnN2dkn/O8gLPQ+P+aqANrkakoEsWiHvKZgG+eZ6zXCn61cemOiwhjkMl6lf96XSQ9LHyrRP6XrEHJIuALAtoWfQrdKN7P/4V8hGr3tSxgy+hHcs/AXq71lIS11PaCLszfgOP8yq8HQI4+1hD2UrJ1+c3Q7N51K0IRNbm6URbZ/vUcx5ABECcK6F2tVCY7QCb5bzcfiTUr6x1SDjRoHrZhLQBwIUj4uR8R1sfbZ8q2vd1V84F+rLUwT7IOy3KWZAjePrrk0nVTs/BMneRr/eZZR0nlG0c1nADU7m6Whcym+ptMGpJslJCbH42X6Q3w5W1yB/wYpPSsPkeOUItQE6Gtk=
   file: wups_playground_plugins_$commit.zip
