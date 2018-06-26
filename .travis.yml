@@ -55,9 +55,7 @@ before_deploy:
 - zip -r wups_playground_plugins_$commit.zip wiiu
 - git config --local user.name "Maschell"
 - git config --local user.email "Maschell@gmx.de"
-- commitLog="$(git log -1 --pretty=%B)"
-- commitMessage="$(echo -e "WUPSPluginPlayground nightly build. Not a stable release. Expect bugs! \nOnly use the plugins with the bundled loaded as they may not work on others." && echo -e "\nCommitlog:\n")"
-- git tag "WUPSPluginPlayground-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)" -a -m "$commitMessage" -m "$commitLog"
+- git tag "WUPSPluginPlayground-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   skip_cleanup: true
