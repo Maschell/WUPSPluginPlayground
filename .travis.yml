@@ -25,8 +25,8 @@ before_install:
   fi
 - yes | sudo dkp-pacman -Syu devkitPPC --needed
 - yes | sudo dkp-pacman -Syu general-tools --needed
-- wget $(curl -s https://api.github.com/repos/decaf-emu/wut/releases/latest | grep
-  'browser_' | grep 'linux' | cut -d\" -f4)
+- wut_url="$(curl -s https://api.github.com/repos/decaf-emu/wut/releases/latest | grep 'browser_' | grep 'linux' | cut -d\" -f4)"
+- wget $wut_url
 install:
 - 7z x -y $(ls | grep "linux") -o${WUT_ROOT}
 - cd $PORTLIBREPOS
