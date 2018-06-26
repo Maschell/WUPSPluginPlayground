@@ -1,7 +1,7 @@
-# WUPS Plugin Playground
+# WUPS Plugin Playground [![Build Status](https://api.travis-ci.org/Maschell/WUPSPluginPlayground.svg?branch=master)](https://travis-ci.org/Maschell/WUPSPluginPlayground)
 
-This repository is supposed to hold serveral small testing plugins for the [Wii U Plugin System](https://github.com/Maschell/WiiUPluginSystem).
- Most of the plugin are either really small (Padcon, NNU_Patcher) or are just testing / gathering information.
+This repository is supposed to hold serveral small testing plugins for the [Wii U Plugin System](https://github.com/Maschell/WiiUPluginSystem). 
+Most of the plugin are either really small (Padcon, NNU_Patcher) or are just for testing / gathering information.
 
 ## List of plugins:
 
