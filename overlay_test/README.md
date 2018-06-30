@@ -9,7 +9,7 @@ This is a plugin for the [Wii U Plugin System (WUPS)](https://github.com/Maschel
 ```
 sd:/wiiu/plugins
 ```
-When the file is placed on the SDCard you can load it with [Wii U Plugin System (WUPS)](plugin loader).
+When the file is placed on the SDCard you can load it with [plugin loader](https://github.com/Maschell/WiiUPluginSystem/).
 
 ## Building
 
