@@ -21,7 +21,7 @@
 #include <vpad/input.h>
 #include <coreinit/screen.h>
 
-void SplashScreen_callback(wups_overlay_options_type_t screen){
+void SplashScreen_callback(wups_overlay_options_type_t screen, void * args){
     int32_t i=0;
 
     while(i<100){
@@ -45,11 +45,11 @@ DECL_FUNCTION(int32_t, VPADRead, int32_t chan, VPADStatus *buffer, uint32_t buff
     if(result > 0 && ((buffer[0].hold & (btns)) == btns) && gCallbackCooldown == 0 ){
         gCallbackCooldown = 0x3C;
         
-        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_ONLY                  ,SplashScreen_callback);
-        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_ONLY                  ,SplashScreen_callback);
-        //WUPS_OpenOverlay(WUPS_OVERLAY_TV_ONLY                   ,SplashScreen_callback);
-        WUPS_OpenOverlay(WUPS_OVERLAY_DRC_AND_TV                ,SplashScreen_callback);
-        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_AND_TV_WITH_DRC_PRIO  ,SplashScreen_callback);
+        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_ONLY                  ,SplashScreen_callback, NULL);
+        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_ONLY                  ,SplashScreen_callback, NULL);
+        //WUPS_OpenOverlay(WUPS_OVERLAY_TV_ONLY                   ,SplashScreen_callback, NULL);
+        WUPS_OpenOverlay(WUPS_OVERLAY_DRC_AND_TV                ,SplashScreen_callback, NULL);
+        //WUPS_OpenOverlay(WUPS_OVERLAY_DRC_AND_TV_WITH_DRC_PRIO  ,SplashScreen_callback, NULL);
     }
     if(gCallbackCooldown > 0){
         gCallbackCooldown--;
