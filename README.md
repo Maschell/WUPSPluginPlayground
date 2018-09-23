@@ -36,3 +36,17 @@ For building you need:
 
 Some plugins may require more libraries to be installed. Checkout their Makefile for more information.
 You could also take a look at the provided travis script and extract the needed building steps.
+
+### Building using the Dockerfile
+It's possible to use a docker image for building. This way you don't need anything installed on your host system.
+
+```
+# Build docker image (only needed once
+docker build . -t playground-builder
+
+# make 
+docker run -it --rm -v ${PWD}:/project playground-builder make
+
+# make clean
+docker run -it --rm -v ${PWD}:/project playground-builder make clean
+```
